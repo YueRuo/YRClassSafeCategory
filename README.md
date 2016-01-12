@@ -57,6 +57,21 @@ iOS开发中，经常遇到解析字典或其他转换的情况，比如下面�
 2. NSNumber的数值转换  
 3. NSDictionary的各种取值和空key处理  
 4. NSArray的各种越界情况处理  
-5. ...
+5. NSNull的常见意外方法调用处理
+6. ...
 
 当发生了出错情况时，比如解析需要一个dic，但是返回类型为string，此时使用我的容错库会得到nil，由于nil的任何消息都能安全执行通过，因此不会出现崩溃。
+
+---
+同时，本人对常用的dictionary解析方法进行补充，增加了如：
+	
+	-(NSString*)stringForKeySafe:(id)akey;
+	-(NSNumber*)numberForKeySafe:(id)aKey;
+	-(NSInteger)integerForKeySafe:(id)aKey;
+	-(long long)longlongForKeySafe:(id)aKey;
+	-(BOOL)boolForKeySafe:(id)aKey;
+	-(NSArray*)arrayForKeySafe:(id)aKey;
+	-(NSDictionary*)dictionaryForKeySafe:(id)aKey;
+这些更直接易用的解析方法，确保拿到的一定是该类型数据，如果类型不匹配或有其他问题都会返回nil。
+
+欢迎大家使用和交流。
