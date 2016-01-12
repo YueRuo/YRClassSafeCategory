@@ -19,6 +19,7 @@
 		5F4E6CCF1B12F978006A110C /* NSNumber+YRSafeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E6CC71B12F978006A110C /* NSNumber+YRSafeCategory.m */; };
 		5F4E6CD01B12F978006A110C /* NSString+YRSafeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E6CC91B12F978006A110C /* NSString+YRSafeCategory.m */; };
 		5F4E6CD11B12F978006A110C /* UITableView+YRSafeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E6CCB1B12F978006A110C /* UITableView+YRSafeCategory.m */; };
+		AAD85AAD1C44FE33007A3787 /* NSNull+YRSafeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD85AAC1C44FE33007A3787 /* NSNull+YRSafeCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,9 @@
 		5F4E6CCA1B12F978006A110C /* UITableView+YRSafeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+YRSafeCategory.h"; sourceTree = "<group>"; };
 		5F4E6CCB1B12F978006A110C /* UITableView+YRSafeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+YRSafeCategory.m"; sourceTree = "<group>"; };
 		5F4E6CCC1B12F978006A110C /* YRClassSafeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRClassSafeCategory.h; sourceTree = "<group>"; };
+		AAD85AAA1C44FB59007A3787 /* YRClassSafeCategoryConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YRClassSafeCategoryConfig.h; sourceTree = "<group>"; };
+		AAD85AAB1C44FE33007A3787 /* NSNull+YRSafeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+YRSafeCategory.h"; sourceTree = "<group>"; };
+		AAD85AAC1C44FE33007A3787 /* NSNull+YRSafeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+YRSafeCategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 		5F4E6CC11B12F978006A110C /* YRClassSafeCategory */ = {
 			isa = PBXGroup;
 			children = (
+				AAD85AAB1C44FE33007A3787 /* NSNull+YRSafeCategory.h */,
+				AAD85AAC1C44FE33007A3787 /* NSNull+YRSafeCategory.m */,
 				5F4E6CC21B12F978006A110C /* NSArray+YRSafeCategory.h */,
 				5F4E6CC31B12F978006A110C /* NSArray+YRSafeCategory.m */,
 				5F4E6CC41B12F978006A110C /* NSDictionary+YRSafeCategory.h */,
@@ -149,6 +155,7 @@
 				5F4E6CC91B12F978006A110C /* NSString+YRSafeCategory.m */,
 				5F4E6CCA1B12F978006A110C /* UITableView+YRSafeCategory.h */,
 				5F4E6CCB1B12F978006A110C /* UITableView+YRSafeCategory.m */,
+				AAD85AAA1C44FB59007A3787 /* YRClassSafeCategoryConfig.h */,
 				5F4E6CCC1B12F978006A110C /* YRClassSafeCategory.h */,
 			);
 			path = YRClassSafeCategory;
@@ -198,7 +205,7 @@
 		5F4E6C901B12F943006A110C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = YueRuo;
 				TargetAttributes = {
 					5F4E6C971B12F943006A110C = {
@@ -256,6 +263,7 @@
 			files = (
 				5F4E6CA41B12F943006A110C /* ViewController.m in Sources */,
 				5F4E6CD01B12F978006A110C /* NSString+YRSafeCategory.m in Sources */,
+				AAD85AAD1C44FE33007A3787 /* NSNull+YRSafeCategory.m in Sources */,
 				5F4E6CA11B12F943006A110C /* AppDelegate.m in Sources */,
 				5F4E6CD11B12F978006A110C /* UITableView+YRSafeCategory.m in Sources */,
 				5F4E6CCE1B12F978006A110C /* NSDictionary+YRSafeCategory.m in Sources */,
@@ -324,6 +332,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -389,6 +398,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YRClassSafeCategoryDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yueruo.common.classsafecategory.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -399,6 +410,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YRClassSafeCategoryDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yueruo.common.classsafecategory.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -417,6 +430,7 @@
 				);
 				INFOPLIST_FILE = YRClassSafeCategoryDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yueruo.common.classsafecategory.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YRClassSafeCategoryDemo.app/YRClassSafeCategoryDemo";
 			};
@@ -432,6 +446,7 @@
 				);
 				INFOPLIST_FILE = YRClassSafeCategoryDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yueruo.common.classsafecategory.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YRClassSafeCategoryDemo.app/YRClassSafeCategoryDemo";
 			};

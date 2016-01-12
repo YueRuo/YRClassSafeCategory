@@ -10,10 +10,12 @@
 
 @interface NSString (YRSafeCategory)
 
--(NSString *)substringFromIndexSafe:(NSUInteger)from;
--(NSString *)substringToIndexSafe:(NSUInteger)to;
--(NSString *)substringWithRangeSafe:(NSRange)range;
--(NSString *)stringByReplacingCharactersInRangeSafe:(NSRange)range withString:(NSString *)replacement;
+- (NSString *)substringFromIndexSafe:(NSUInteger)from;
+- (NSString *)substringToIndexSafe:(NSUInteger)to;
+- (NSString *)substringWithRangeSafe:(NSRange)range;
+- (NSString *)stringByReplacingCharactersInRangeSafe:(NSRange)range withString:(NSString *)replacement;
+
+- (NSString *)stringByAppendingStringSafe:(NSString *)aString;
 
 - (double)doubleValueSafe;
 - (float)floatValueSafe;
@@ -21,4 +23,6 @@
 - (NSInteger)integerValueSafe NS_AVAILABLE(10_5, 2_0);
 - (long long)longLongValueSafe NS_AVAILABLE(10_5, 2_0);
 - (BOOL)boolValueSafe NS_AVAILABLE(10_5, 2_0);
+
+- (unichar)characterAtIndexSafe:(NSUInteger)index;
 @end

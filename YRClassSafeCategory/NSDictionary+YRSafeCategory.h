@@ -14,6 +14,7 @@
 -(NSString*)stringForKeySafe:(id)akey;
 -(NSNumber*)numberForKeySafe:(id)aKey;
 -(NSInteger)integerForKeySafe:(id)aKey;
+-(long long)longlongForKeySafe:(id)aKey;
 
 -(BOOL)boolForKeySafe:(id)aKey;
 -(NSArray*)arrayForKeySafe:(id)aKey;

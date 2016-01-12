@@ -7,16 +7,19 @@
 //
 
 #import "NSDictionary+YRSafeCategory.h"
+#import "YRClassSafeCategoryConfig.h"
 
 @implementation NSDictionary (YRSafeCategory)
 +(id)dictionaryWithObjectSafe:(id)object forKey:(id<NSCopying>)key{
     if (!key||!object) {
+        YRWarningLog(@"NSDictionary dictionaryWithObjectSafe set nil value or key ,value=%@,key=%@",object,key);
         return nil;
     }
     return [self dictionaryWithObject:object forKey:key];
 }
 -(id)objectForKeySafe:(id)aKey{
     if (!aKey) {
+        YRWarningLog(@"NSDictionary objectForKeySafe use nil key,dictionary=%@",self);
         return nil;
     }
     return [self objectForKey:aKey];
@@ -54,6 +57,13 @@
     }
     return 0;
 }
+-(long long)longlongForKeySafe:(id)aKey{
+    NSString *value=[self objectForKeySafe:aKey];
+    if (value&&[value respondsToSelector:@selector(longLongValue)]) {
+        return [value longLongValue];
+    }
+    return 0;
+}
 
 -(BOOL)boolForKeySafe:(id)aKey{
     NSString *value=[self objectForKeySafe:aKey];
@@ -81,6 +91,7 @@
 @implementation NSMutableDictionary (YRSafeCategory)
 -(void)setObjectSafe:(id)anObject forKey:(id<NSCopying>)aKey{
     if (!aKey||!anObject) {
+        YRWarningLog(@"NSDictionary setObjectSafe set nil value or key ,value=%@,key=%@,dictionary=%@",anObject,aKey,self);
         return;
     }
     return [self setObject:anObject forKey:aKey];

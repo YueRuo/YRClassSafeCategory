@@ -48,6 +48,12 @@
     NSString *stringWrong = [dictionary stringForKeySafe:@"dic"];
     NSDictionary *dicWrong = [dictionary dictionaryForKeySafe:@"num1"];
     NSArray *arrayWrong = [dictionary arrayForKeySafe:@"dic"];
+    id keyWrong = [dictionary arrayForKeySafe:nil];
+    
+    id nullObj = [NSNull null];
+    [nullObj count];
+    [nullObj objectAtIndex:2];
+    [nullObj setObject:@"a" forKey:@"test"];
     
     NSLog(@"就算类型不对，也可以安全执行过去，运行正常不会崩溃:\n%zd\n%@\n%@\n%@",num1Wrong,stringWrong,dicWrong,arrayWrong);
 }
