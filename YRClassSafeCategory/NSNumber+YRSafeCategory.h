@@ -22,6 +22,6 @@
 - (float)floatValueSafe;
 - (double)doubleValueSafe;
 - (BOOL)boolValueSafe;
-- (NSInteger)integerValueSafe NS_AVAILABLE(10_5, 2_0);
-- (NSUInteger)unsignedIntegerValueSafe NS_AVAILABLE(10_5, 2_0);
+- (NSInteger)integerValueSafe;
+- (NSUInteger)unsignedIntegerValueSafe;
 @end

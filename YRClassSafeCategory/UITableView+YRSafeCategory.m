@@ -10,14 +10,15 @@
 #import "YRClassSafeCategoryConfig.h"
 
 @implementation UITableView (YRSafeCategory)
--(void)reloadRowsAtIndexPathsSafe:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation{
-    NSMutableArray *tempArray=[[NSMutableArray alloc]initWithCapacity:indexPaths.count];
-    NSInteger totalSelections=[self numberOfSections];
+- (void)reloadRowsAtIndexPathsSafe:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation {
+    NSMutableArray *tempArray = [[NSMutableArray alloc] initWithCapacity:indexPaths.count];
+    NSInteger totalSelections = [self numberOfSections];
     for (NSIndexPath *indexPath in indexPaths) {
-        NSInteger totalRows=[self numberOfRowsInSection:indexPath.section];
-        if(indexPath.section<0||indexPath.section>=totalSelections||indexPath.row>=totalRows){
-            YRWarningLog(@"UITableView reloadRowsAtIndexPathsSafe find indexPath %@ out of bounds ,tableView cell class type=%@",indexPath,[[self visibleCells]count]>0?[[[self visibleCells] objectAtIndex:0] class]:@"unknown");
-        }else{
+        NSInteger totalRows = [self numberOfRowsInSection:indexPath.section];
+        if (indexPath.section < 0 || indexPath.section >= totalSelections ||
+            indexPath.row >= totalRows) {
+            YRWarningLog(@"UITableView reloadRowsAtIndexPathsSafe find indexPath %@ out of bounds ,tableView cell class type=%@",indexPath, [[self visibleCells] count] > 0 ? [[[self visibleCells] objectAtIndex:0] class] : @"unknown");
+        } else {
             [tempArray addObject:indexPath];
         }
     }

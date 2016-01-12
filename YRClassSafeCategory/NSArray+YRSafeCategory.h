@@ -9,15 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface NSArray (YRSafeCategory)
-+(id)arrayWithObjectSafe:(id)anObject;
--(id)objectAtIndexSafe:(NSUInteger)uindex;
--(NSArray *)arrayByAddingObjectSafe:(id)anObject;
++ (id)arrayWithObjectSafe:(id)anObject;
+- (id)objectAtIndexSafe:(NSUInteger)uindex;
+- (NSArray *)arrayByAddingObjectSafe:(id)anObject;
 @end
 
-
 @interface NSMutableArray (YRSafeCategory)
--(void)addObjectSafe:(id)anObject;
--(void)insertObjectSafe:(id)anObject atIndex:(NSUInteger)index;
--(void)replaceObjectAtIndexSafe:(NSUInteger)index withObject:(id)anObject;
--(void)removeObjectAtIndexSafe:(NSUInteger)index;
+- (void)addObjectSafe:(id)anObject;
+- (void)insertObjectSafe:(id)anObject atIndex:(NSUInteger)index;
+- (void)replaceObjectAtIndexSafe:(NSUInteger)index withObject:(id)anObject;
+- (void)removeObjectAtIndexSafe:(NSUInteger)index;
 @end

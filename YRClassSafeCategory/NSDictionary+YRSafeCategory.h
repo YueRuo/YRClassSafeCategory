@@ -9,18 +9,18 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDictionary (YRSafeCategory)
-+(id)dictionaryWithObjectSafe:(id)object forKey:(id<NSCopying>)key;
--(id)objectForKeySafe:(id)aKey;
--(NSString*)stringForKeySafe:(id)akey;
--(NSNumber*)numberForKeySafe:(id)aKey;
--(NSInteger)integerForKeySafe:(id)aKey;
--(long long)longlongForKeySafe:(id)aKey;
++ (id)dictionaryWithObjectSafe:(id)object forKey:(id<NSCopying>)key;
+- (id)objectForKeySafe:(id)aKey;
+- (NSString *)stringForKeySafe:(id)akey;
+- (NSNumber *)numberForKeySafe:(id)aKey;
+- (NSInteger)integerForKeySafe:(id)aKey;
+- (long long)longlongForKeySafe:(id)aKey;
 
--(BOOL)boolForKeySafe:(id)aKey;
--(NSArray*)arrayForKeySafe:(id)aKey;
--(NSDictionary*)dictionaryForKeySafe:(id)aKey;
+- (BOOL)boolForKeySafe:(id)aKey;
+- (NSArray *)arrayForKeySafe:(id)aKey;
+- (NSDictionary *)dictionaryForKeySafe:(id)aKey;
 @end
 
 @interface NSMutableDictionary (YRSafeCategory)
--(void)setObjectSafe:(id)anObject forKey:(id<NSCopying>)aKey;
+- (void)setObjectSafe:(id)anObject forKey:(id<NSCopying>)aKey;
 @end
