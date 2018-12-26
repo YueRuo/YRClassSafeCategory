@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSString (YRSafeCategory)
 
-- (NSString *)substringFromIndexSafe:(NSUInteger)from;
-- (NSString *)substringToIndexSafe:(NSUInteger)to;
-- (NSString *)substringWithRangeSafe:(NSRange)range;
-- (NSString *)stringByReplacingCharactersInRangeSafe:(NSRange)range withString:(NSString *)replacement;
+- (nullable NSString *)substringFromIndexSafe:(NSUInteger)from;
+- (nullable NSString *)substringToIndexSafe:(NSUInteger)to;
+- (nullable NSString *)substringWithRangeSafe:(NSRange)range;
+- (nullable NSString *)stringByReplacingCharactersInRangeSafe:(NSRange)range withString:(NSString *)replacement;
 
-- (NSString *)stringByAppendingStringSafe:(NSString *)aString;
+- (NSString *)stringByAppendingStringSafe:(nullable NSString *)aString;
 
 - (double)doubleValueSafe;
 - (float)floatValueSafe;
@@ -26,3 +28,5 @@
 
 - (unichar)characterAtIndexSafe:(NSUInteger)index;
 @end
+
+NS_ASSUME_NONNULL_END

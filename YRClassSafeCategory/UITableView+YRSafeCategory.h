@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UITableView (YRSafeCategory)
--(void)reloadRowsAtIndexPathsSafe:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;
+
+-(void)reloadRowsAtIndexPathsSafe:(nullable NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;
+
 @end
+
+NS_ASSUME_NONNULL_END
