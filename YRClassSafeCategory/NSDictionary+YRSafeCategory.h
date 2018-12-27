@@ -8,19 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDictionary (YRSafeCategory)
-+ (id)dictionaryWithObjectSafe:(id)object forKey:(id<NSCopying>)key;
-- (id)objectForKeySafe:(id)aKey;
-- (NSString *)stringForKeySafe:(id)akey;
-- (NSNumber *)numberForKeySafe:(id)aKey;
-- (NSInteger)integerForKeySafe:(id)aKey;
-- (long long)longlongForKeySafe:(id)aKey;
+NS_ASSUME_NONNULL_BEGIN
 
-- (BOOL)boolForKeySafe:(id)aKey;
-- (NSArray *)arrayForKeySafe:(id)aKey;
-- (NSDictionary *)dictionaryForKeySafe:(id)aKey;
+@interface NSDictionary<__covariant KeyType, __covariant ObjectType> (YRSafeCategory)
++ (instancetype)dictionaryWithObjectSafe:(nullable ObjectType)object forKey:(nullable KeyType<NSCopying>)key;
+- (nullable ObjectType)objectForKeySafe:(nullable KeyType)aKey;
+- (nullable NSString *)stringForKeySafe:(nullable KeyType)akey;
+- (nullable NSNumber *)numberForKeySafe:(nullable KeyType)aKey;
+- (NSInteger)integerForKeySafe:(nullable KeyType)aKey;
+- (long long)longlongForKeySafe:(nullable KeyType)aKey;
+
+- (BOOL)boolForKeySafe:(nullable KeyType)aKey;
+- (nullable NSArray *)arrayForKeySafe:(nullable KeyType)aKey;
+- (nullable NSDictionary *)dictionaryForKeySafe:(nullable KeyType)aKey;
 @end
 
-@interface NSMutableDictionary (YRSafeCategory)
-- (void)setObjectSafe:(id)anObject forKey:(id<NSCopying>)aKey;
+@interface NSMutableDictionary<KeyType, ObjectType> (YRSafeCategory)
+- (void)setObjectSafe:(nullable ObjectType)anObject forKey:(nullable KeyType<NSCopying>)aKey;
 @end
+
+NS_ASSUME_NONNULL_END
